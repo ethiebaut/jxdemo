@@ -82,9 +82,6 @@ pipeline {
               sh 'env'
               sh 'export'
 
-              // pause
-              sh 'sleep 120'
-
               // release the helm chart
               sh 'jx step helm release'
 
