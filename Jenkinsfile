@@ -74,8 +74,14 @@ pipeline {
             container('maven') {
               sh 'jx step changelog --version v\$(cat ../../VERSION)'
 
+              // Display dir and env
+              sh 'pwd'
+              sh 'env'
+              sh 'export'
+
               // pause
-              sh 'sleep 300'
+              sh 'sleep 120'
+
               // release the helm chart
               sh 'jx step helm release'
 
